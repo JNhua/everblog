@@ -17,6 +17,7 @@ const moment = require('moment')
 const utils = require('../lib/utils')
 const pkg = require('../package.json')
 const Everblog = require('../lib/everblog')
+const adapter = require('../lib/hexo_adapter')
 
 const configPath = path.join(home, '.everblogrc')
 const log = str => {
@@ -65,7 +66,6 @@ function configBlog() {
 }
 
 function buildBlog() {
-  const dir = process.cwd()
   const configStr = fs.readFileSync(configPath)
   const config = yaml.safeLoad(configStr)
 
@@ -80,14 +80,6 @@ function buildBlog() {
     config.lastBuild = 0
   }
 
-  let buildProcessor
-  try {
-    buildProcessor = require(dir)
-  } catch (e) {
-    error(e.stack || e)
-    return Promise.reject()
-  }
-
   return co(function* () {
     const everblog = new Everblog(config)
     if (everblog._client.noteStoreUrl.indexOf(everblog._client.serviceHost) == -1){
@@ -98,7 +90,7 @@ function buildBlog() {
     const data = utils.formatNotes(notes, webApiUrlPrefix)
     data.noteStore = everblog._noteStore
 
-    return yield buildProcessor(data)
+    return yield adapter(data)
   }).then(() => {
     log('build finished')
     let newConfig = _.cloneDeep(config)
