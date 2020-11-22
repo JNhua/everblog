@@ -11,10 +11,8 @@ EverBlog = write blogs in your evernote.
 ### How to use
 
 ```
-$ npm i everblog -g
+$ npm install -g https://github.com/JNhua/everblog.git
 $ everblog config
-$ git clone https://github.com/everblogjs/everblog-theme-spa
-$ cd everblog-theme-spa && npm i
 
 Open evernote:
 
@@ -39,21 +37,6 @@ Finally push your github-pages.
 ### Adaptors
 
 - [everblog-adaptor-hexo](https://github.com/everblogjs/everblog-adaptor-hexo)
-- [everblog-adaptor-spa](https://github.com/everblogjs/everblog-adaptor-spa)
-
-### Themes
-
-- all hexo themes
-- [everblog-theme-spa](https://github.com/everblogjs/everblog-theme-spa)
-- [everblog-theme-koa](https://github.com/everblogjs/everblog-theme-koa)
-
-### Roadmap
-
-- Ghost adaptor
-- Jekyll adaptor
-- Angular adaptor
-- React adaptor
-- ...
 
 ### Test
 
