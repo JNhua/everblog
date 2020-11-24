@@ -1,4 +1,4 @@
-## EverBlog
+# EverBlog
 
 [![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
@@ -8,17 +8,15 @@
 
 EverBlog = write blogs in your evernote.
 
-### How to use
+## How to use
 
-```
+```bash
 $ npm install -g https://github.com/JNhua/everblog.git
-$ everblog config
 
 Open evernote:
 
 1. create a new notebook named `myblog`
-2. create a new note named `_config.yml`
-3. write some notes with tags
+2. write some notes with tag `published`
 
 Then:
 
@@ -27,28 +25,24 @@ $ DEBUG=* everblog start
 Finally push your github-pages.
 ```
 
-**Tips**: 
+**Tips**:
 
 `token` and `noteStoreUrl` get from:
 
-- https://www.evernote.com/api/DeveloperToken.action
-- https://app.yinxiang.com/api/DeveloperToken.action
+- [evernote](https://www.evernote.com/api/DeveloperToken.action)
+- [印象笔记](https://app.yinxiang.com/api/DeveloperToken.action)
 
-### Adaptors
+## Test
 
-- [everblog-adaptor-hexo](https://github.com/everblogjs/everblog-adaptor-hexo)
-
-### Test
-
-```
+```bash
 npm test
 ```
 
-### Error Handling
+## Error Handling
 
 see [https://dev.evernote.com/doc/articles/error_handling.php](https://dev.evernote.com/doc/articles/error_handling.php).
 
-### License
+## License
 
 MIT
 
