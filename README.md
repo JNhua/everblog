@@ -12,6 +12,20 @@ EverBlog = write blogs in your evernote.
 
 ```bash
 $ npm install -g https://github.com/JNhua/everblog.git
+```
+
+### Config
+```bash
+$ vim ~/.everblogrc
+```
+like this:
+```bash
+token: xxx
+noteStoreUrl: 'xxx'
+serviceHost: app.yinxiang.com
+sandbox: false
+
+```
 
 Open evernote:
 
@@ -19,11 +33,12 @@ Open evernote:
 2. write some notes with tag `published`
 
 Then:
-
+```bash
 $ DEBUG=* everblog start
+```
 
 Finally push your github-pages.
-```
+
 
 **Tips**:
 
