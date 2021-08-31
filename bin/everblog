@@ -61,7 +61,7 @@ function configBlog() {
     log(fs.readFileSync(configPath))
   } catch (e) {
     error('Failed in reading ' + configPath)
-    error('Please have ~/.everblogrc including:\n\n  token: "xxx"\n  noteStoreUrl: "xxx"\n  notebook: "xxx"')
+    error('Please have ~/.everblogrc including:\n\n  token: "xxx"\n  noteStoreUrl: "xxx"')
   }
 }
 
